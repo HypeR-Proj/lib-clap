@@ -22,8 +22,25 @@
   "tests": [
     [
       "make",
-      "app-test",
+      "component-check",
       "APP_TEST_PACKAGE=hyper-clap-shared"
     ]
-  ]
+  ],
+  "cargo_context": {
+    "Cargo.toml": {
+      "workspace": null,
+      "membership": "../../app",
+      "dependency_paths": {
+        "/dependencies/hyper-rust-std": "stdlib/rust-std"
+      },
+      "inherited_dependencies": {
+        "/dependencies/clap": {
+          "workspace": true
+        },
+        "/dependencies/hyper-rust-std": {
+          "workspace": true
+        }
+      }
+    }
+  }
 }
