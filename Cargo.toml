@@ -1,30 +1,32 @@
 # SPDX-FileCopyrightText: 2026 roolrz
 # SPDX-License-Identifier: Apache-2.0
 
+
 [package]
 name = "hyper-clap-shared"
 version = "0.0.0"
 edition = "2024"
 license = "Apache-2.0"
-repository = "https://github.com/HypeR-Proj/clap-shared"
+repository = "https://github.com/HypeR-Proj/lib-clap-shared"
 publish = false
+workspace = "../../app"
 
 [lib]
-crate-type = [
-    "dylib",
-]
+crate-type = ["dylib"]
 test = false
 bench = false
 doctest = false
 
+[dependencies]
+
 [dependencies.clap]
-version = "=4.6.6"
-features = [
-    "derive",
-]
+workspace = true
+features = ["derive"]
 
 [dependencies.hyper-rust-std]
-version = "=0.0.0"
+workspace = true
+
+[lints]
 
 [lints.clippy]
 doc_markdown = "deny"
@@ -43,12 +45,4 @@ unsafe_op_in_unsafe_fn = "deny"
 
 [lints.rust.unexpected_cfgs]
 level = "warn"
-check-cfg = [
-    "cfg(target_os, values(\"hyper\"))",
-]
-
-[workspace]
-members = [
-    ".",
-]
-resolver = "3"
+check-cfg = ["cfg(target_os, values(\"hyper\"))"]
