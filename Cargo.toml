@@ -7,7 +7,7 @@ name = "hyper-clap-shared"
 version = "0.0.0"
 edition = "2024"
 license = "Apache-2.0"
-repository = "https://github.com/HypeR-Proj/lib-clap-shared"
+repository = "https://github.com/HypeR-Proj/lib-clap"
 publish = false
 workspace = "../../app"
 
